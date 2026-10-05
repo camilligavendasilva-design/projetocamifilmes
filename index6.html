@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cine Horror - O Portal do Terror</title>
+
+    <!-- Fontes do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            color: #d1d1d1;
+            line-height: 1.6;
+            background-image: radial-gradient(circle at center, #1a0202 0%, #050505 100%);
+            background-attachment: fixed;
+        }
+
+        /* CABEÇALHO MACABRO */
+
+        header {
+            background: linear-gradient(180deg, #000000, #300000, #0a0a0a);
+            color: #e60000;
+            text-align: center;
+            padding: 70px 20px;
+            border-bottom: 3px solid #8b0000;
+            box-shadow: 0 0 25px rgba(139, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-family: 'Creepster', cursive;
+            font-size: 55px;
+            letter-spacing: 3px;
+            text-shadow: 3px 3px 10px #ff0000, 0 0 20px #8b0000;
+            margin-bottom: 10px;
+            animation: pulse 2s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { text-shadow: 2px 2px 5px #8b0000; }
+            100% { text-shadow: 4px 4px 20px #ff0000, 0 0 30px #ff0000; }
+        }
+
+        header p {
+            font-size: 20px;
+            color: #aaa;
+            margin: 5px;
+        }
+
+        /* MENU OBSCURO */
+
+        nav {
+            background-color: #050505;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #333;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+        }
+
+        nav a {
+            color: #bbb;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: #ff1e1e;
+            text-shadow: 0 0 8px #ff0000;
+        }
+
+        /* SEÇÕES */
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        section h2 {
+            font-family: 'Creepster', cursive;
+            letter-spacing: 2px;
+            text-align: center;
+            color: #ff2a2a;
+            margin-bottom: 30px;
+            font-size: 40px;
+            text-shadow: 2px 2px 5px #000;
+        }
+
+        /* INÍCIO */
+
+        .inicio {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            background: #121212;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #330000;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
+        }
+
+        .inicio img {
+            width: 45%;
+            border-radius: 10px;
+            filter: grayscale(40%) contrast(120%);
+            border: 2px solid #550000;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+        }
+
+        .inicio-texto {
+            width: 55%;
+        }
+
+        .inicio-texto h2 {
+            text-align: left;
+        }
+
+        /* CARDS MACABROS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #141414;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #2a0a0a;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #8b0000;
+            box-shadow: 0 0 20px rgba(139, 0, 0, 0.6);
+        }
+
+        .card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            filter: grayscale(30%);
+        }
+
+        .card h3 {
+            color: #ff3333;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        /* ATIVIDADES - RITUAIS DE SOBREVIVÊNCIA */
+
+        .atividade {
+            background-color: #121212;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 6px solid #8b0000;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+            border-top: 1px solid #1a1a1a;
+            border-right: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .atividade h3 {
+            color: #ff2a2a;
+            margin-bottom: 10px;
+        }
+
+        /* PROJETO FINAL - RITUAL CRUCIAL */
+
+        .projeto {
+            background: linear-gradient(135deg, #1f0000, #0a0000);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #8b0000;
+            box-shadow: 0 0 25px rgba(139, 0, 0, 0.4);
+        }
+
+        .projeto h2 {
+            color: #ff2a2a;
+        }
+
+        .botao {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #8b0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+        }
+
+        .botao:hover {
+            background-color: #ff0000;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+        }
+
+        /* REFLEXÃO SOBRE A ESCURIDÃO */
+
+        .reflexao {
+            background-color: #120a0a;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #331111;
+        }
+
+        .reflexao p {
+            font-size: 19px;
+            color: #ccc;
+        }
+
+        /* RODAPÉ SANGRENTOS */
+
+        footer {
+            background-color: #050505;
+            color: #777;
+            text-align: center;
+            padding: 30px;
+            margin-top: 30px;
+            border-top: 1px solid #222;
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 700px) {
+
+            header h1 {
+                font-size: 38px;
+            }
+
+            nav a {
+                display: block;
+                margin: 8px;
+            }
+
+            .inicio {
+                flex-direction: column;
+            }
+
+            .inicio img,
+            .inicio-texto {
+                width: 100%;
+            }
+
+            .inicio-texto h2 {
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- CABEÇALHO -->
+
+    <header>
+
+        <h1>🩸 Cine Horror Club</h1>
+
+        <p></p>
+
+        <p>
+            Análise de clássicos, lendas urbanas e os mistérios do cinema de terror.
+        </p>
+
+    </header>
+
+
+    <!-- MENU -->
+
+    <nav>
+
+        <a href="#inicio">Início</a>
+
+        <a href="#subgeneros">Subgêneros</a>
+
+        <a href="#elementos">Elementos</a>
+
+        <a href="#desafios">Desafios</a>
+
+        <a href="#projeto">Projeto Final</a>
+
+    </nav>
+
+
+    <!-- INÍCIO -->
+
+    <section id="inicio">
+
+        <div class="inicio">
+
+            <img
+                src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=800&q=80"
+                alt="Cinema de Terror"
+            >
+
+            <div class="inicio-texto">
+
+                <h2>👁️ Entra Por Tua Conta e Risco</h2>
+
+                <p>
+                    Este portal foi criado para os alunos do <strong>1º ano</strong> explorarem
+                    as profundezas do <strong>Cinema de Terror e Suspense</strong>.
+                </p>
+
+                <br>
+
+                <p>
+                    Aqui vamos dissecar a anatomia dos grandes sustos, entender como a iluminação e a trilha sonora manipulam nossas mentes e descobrir o que torna uma história inesquecível.
+                </p>
+
+                <br>
+
+                <p>
+                    🕯️ Observar o Escuro + 😱 Criar a Tensão + 📽️ Projetar o Pesadelo
+                </p>
+
+                <br>
+
+                <p>
+                    Fazer cinema de terror é a arte de dominar a psicologia do medo.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SUBGÊNEROS -->
+
+    <section id="subgeneros">
+
+        <h2>🎬 Subgêneros do Terror</h2>
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80"
+                    alt="Terror Psicológico"
+                >
+
+                <h3>🧠 Terror Psicológico</h3>
+
+                <p>
+                    Onde o maior monstro é a própria mente humana. Focado em paranoia, ilusões e sanidade.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=600&q=80"
+                    alt="Sobrenatural"
+                >
+
+                <h3>👻 Sobrenatural</h3>
+
+                <p>
+                    Fantasmas, espíritos, possessões e casas mal-assombradas que desafiam a lógica e a razão.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80"
+                    alt="Slasher"
+                >
+
+                <h3>🔪 Slasher</h3>
+
+                <p>
+                    Assassinos mascarados, vítimas em perigo e regras de sobrevivência muito claras.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&w=600&q=80"
+                    alt="Ficção Científica e Morte"
+                >
+
+                <h3>👽 Terror Sci-Fi / Monstro</h3>
+
+                <p>
+                    Ameaças alienígenas, criaturas desconhecidas e experimentos científicos que saíram do controle.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ELEMENTOS DO MEDO -->
+
+    <section id="elementos">
+
+        <h2>🕷️ A Anatomia da Tensão</h2>
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <h3>🕯️ Iluminação</h3>
+
+                <p>
+                    Uso de sombras profundas, luzes piscantes e contraste para esconder o desconhecido.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>🎵 Trilha Sonora</h3>
+
+                <p>
+                    Sons dissonantes, silêncio repentino e batidas pesadas que aceleram o coração.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>🩸 Efeitos Práticos</h3>
+
+                <p>
+                    Maquiagem assustadora, sangue falso e próteses que dão vida aos piores pesadelos.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>🚪 Cenografia</h3>
+
+                <p>
+                    Corredores apertados, névoa espessa e locais isolados de onde não há como escapar.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- REFLEXÃO -->
+
+    <section>
+
+        <div class="reflexao">
+
+            <h2>💀 Por Que Gostamos de Ter Medo?</h2>
+
+            <p>
+                O cinema de terror nos permite experimentar situações de perigo extremo em um ambiente seguro e controlado.
+            </p>
+
+            <br>
+
+            <p>
+                Através da tela, testamos nossos limites, descarregamos a adrenalina e refletimos sobre os medos reais da sociedade.
+            </p>
+
+            <br>
+
+            <p>
+                Compreender a narrativa do terror é entender os <strong>segredos da emoção humana, da empatia e da tensão dramática.</strong>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- DESAFIOS / ATIVIDADES -->
+
+    <section id="desafios">
+
+        <h2>📜 Rituais & Atividades</h2>
+
+
+        <div class="atividade">
+
+            <h3>🔪 Atividade 1 – O Primeiro Susto</h3>
+
+            <p>
+                Pesquise qual foi o primeiro filme de terror da história do cinema e faça um breve resumo sobre a recepção do público na época.
+            </p>
+
+        </div>
+
+
+        <div class="atividade">
+
+            <h3>🎵 Atividade 2 – A Música do Pesadelo</h3>
+
+            <p>
+                Escolha uma trilha sonora marcante de um filme de terror (ex: *Tubarão*, *Psicose*, *Halloween*) e explique como a música gera suspense.
+            </p>
+
+        </div>
+
+
+        <div class="atividade">
+
+            <h3>🤡 Atividade 3 – Criando o Monstro</h3>
+
+            <p>
+                Desenvolva o conceito de um vilão ou criatura assustadora. Qual é a sua origem, sua fraqueza e o que o torna assustador?
+            </p>
+
+        </div>
+
+
+        <div class="atividade">
+
+            <h3>🔦 Atividade 4 – A Regra da Sobrevivência</h3>
+
+            <p>
+                Liste 5 clichês comuns em filmes de terror (ex: "nunca se separe do grupo") e proponha como um personagem poderia evitá-los.
+            </p>
+
+        </div>
+
+
+        <div class="atividade">
+
+            <h3>📜 Atividade 5 – Lenda Urbana Local</h3>
+
+            <p>
+                Pesquise ou crie uma lenda urbana ambientada na sua cidade ou escola e transforme-a na sinopse de um filme de terror.
+            </p>
+
+        </div>
+
+
+        <div class="atividade">
+
+            <h3>📹 Atividade 6 – O Storyboard da Tensão</h3>
+
+            <p>
+                Desenhe ou descreva cena por cena uma sequência de 30 segundos focada em construir suspense antes de um *jump scare*.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJETO FINAL -->
+
+    <section id="projeto">
+
+        <div class="projeto">
+
+            <h2>🎬 Projeto Final – O Curta-Metragem Assustador</h2>
+
+            <p>
+                Em grupos, vocês deverão planejar a criação de um curta-metragem ou roteiro de suspense/terror para ser apresentado para a turma.
+            </p>
+
+            <br>
+
+            <p>
+                O projeto deverá conter:
+            </p>
+
+            <br>
+
+            <p>
+                🩸 Sinopse do filme e subgênero escolhido
+                <br>
+                🩸 Perfil do Vilão / Ameaça
+                <br>
+                🩸 Roteiro da cena principal (com diálogos e indicações de som)
+                <br>
+                🩸 Maquete ou desenho do cenário principal
+                <br>
+                🩸 Escolha da Trilha Sonora
+                <br>
+                🩸 Cartaz do filme (Pôster Oficial)
+                <br>
+                🩸 Apresentação do 'Teaser' para a turma
+            </p>
+
+            <a href="#inicio" class="botao">
+                Voltar ao Topo
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <p>
+            🩸 Cine Horror Club – 1º Ano do Ensino Médio
+        </p>
+
+        <p>
+            Assustar. Impressionar. Marcar. Sobreviver.
+        </p>
+
+        <br>
+
+        <p>
+            © 2026 - Arquivos do Medo
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
